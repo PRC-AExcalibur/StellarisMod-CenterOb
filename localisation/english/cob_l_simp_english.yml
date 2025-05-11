@@ -1,0 +1,8 @@
+﻿l_english:
+ cob_home_system_initializer_NAME:0 "Galactic Core Cluster"
+ cob_home_system_initializer_DESC:0 "The Galactic Core Cluster, located at the center of the galaxy, is buried with numerous ruined megastructures.\n\n$system_initializer_DESC$"
+ cob_home_system_initializer_effect:0 "Born in the Galactic Core Cluster.\n$origin_tooltip_shattered_ring_effects$"
+ origin_center_ob:0 "Guardian of the Galactic Core"
+ origin_center_ob_desc:0 "The regime guarding the center of the galaxy has special modifiers."
+ center_ob_modif:0 "Guardian's Code of the Galactic Core"
+ center_ob_modif_desc:0 "The Guardian of the Galactic Core faces no penalties in the core, while distant systems are hard to manage."

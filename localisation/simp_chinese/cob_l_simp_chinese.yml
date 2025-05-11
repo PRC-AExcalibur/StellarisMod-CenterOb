@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+
+ cob_home_system_initializer_NAME:0 "银心星团"
+ cob_home_system_initializer_DESC:0 "银心星团，位于银河中心，埋藏大量损坏的巨构建筑。\n\n$system_initializer_DESC$"
+ cob_home_system_initializer_effect:0"出生于银心星团。\n$origin_tooltip_shattered_ring_effects$"
+ origin_center_ob:0 "银心守卫"
+ origin_center_ob_desc:0 "拱卫银河中心的政权，有特殊的修正。"
+ center_ob_modif:0 "银心守卫准则"
+ center_ob_modif_desc:0 "银心守卫在银心不受惩罚，而远在天边的星系难以管理。"

@@ -1,0 +1,359 @@
+cob_home_system_initializer = {
+	class = "sc_black_hole"
+	
+	flags = { empire_home_system }
+
+	usage = custom_empire
+	max_instances = 1
+	
+	planet = {
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+		has_ring = no
+	}
+	
+	planet = {
+		home_planet = yes
+		
+		class = ideal_planet_class
+		orbit_distance = 35
+		orbit_angle = random
+		size = { min = 16 max = 20 }
+		has_ring = no
+		
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = cob_origin_planet
+		}
+	}
+
+	init_effect = {
+		set_spawn_system_batch = begin
+		no_scope = {
+            spawn_system = {
+                min_distance >= 0
+                max_distance <= 0
+                min_orientation_angle = 0
+                max_orientation_angle = 360
+                initializer = cob_home_system_init_01
+                hyperlane = no
+                authorize_spawn_on_galactic_core = yes
+            }
+        }
+		random_system = {
+			limit = {
+				has_star_flag = cob_flag_0
+			}
+			save_event_target_as = cob_flag_0
+			every_neighbor_system = {
+				limit = {
+					has_hyperlane_to = prev
+				}
+				remove_hyperlane = {
+					from = this
+					to = prev
+				}
+			}
+		}
+		set_spawn_system_batch = end
+		spawn_megastructure = {
+			type = "gateway_final"
+			planet = system_star
+			orbit_distance = 20
+		}
+	}
+}
+
+
+cob_home_system_init_01 = {
+	name = "Center System"
+	class = "sc_cob"
+
+	flags = {
+		empire_cluster
+		cob_flag_0
+	}
+
+	planet = {
+		class = pc_black_hole
+		orbit_distance = 0
+		planet = {
+			class = "pc_ringworld_habitable"
+			size = 40
+			orbit_distance = 50
+			orbit_angle = 90
+			deposit_blockers = none
+			init_effect = {
+				add_deposit = d_valley_of_zanaam
+				add_deposit = d_guardian_dragon_hoard
+				add_modifier = {modifier=magnetic_research_boost}
+				add_modifier = {modifier=the_memorex}
+				add_modifier = {modifier=colonial_spirit_mod}
+				set_planet_flag = starting_deposit
+			}
+		}
+		init_effect = {
+			save_event_target_as = matter_decompressor_t
+		}
+	}
+
+	planet = {
+		class = pc_a_star
+		orbit_distance = 400
+		size = 10
+		init_effect = {
+			save_event_target_as = dyson_sphere_t
+			clear_deposits = yes
+
+		}
+		change_orbit = 80
+		planet = {
+			count = { min = 6 max = 8 }
+			class = pc_asteroid
+			orbit_distance = 0
+			orbit_angle = random
+			size = 6
+			init_effect = {
+				add_deposit = d_minerals_9
+				add_deposit = d_alloys_3
+				set_planet_flag = starting_deposit
+			}
+		}
+		change_orbit = 40
+		planet = {
+			count = { min = 6 max = 8 }
+			class = pc_molten
+			orbit_distance = 0
+			orbit_angle = random
+			size = 12
+			init_effect = {
+				add_deposit = d_minerals_9
+				add_deposit = d_energy_10
+				set_planet_flag = starting_deposit
+			}
+		}
+		planet = {
+			class = pc_molten
+			orbit_distance = 20
+			size = 30
+			init_effect = {
+				add_deposit = d_minerals_9
+				add_deposit = d_energy_10
+				set_planet_flag = starting_deposit
+				save_event_target_as = orbital_arc_furnace_t
+			}
+		}
+
+		planet = {
+			class = pc_relic
+			orbit_distance = 40
+			size = 60
+			home_planet = yes
+			flags = { cob_capital_plant }
+			init_effect = {
+				set_planet_flag = cob_init_system
+				save_event_target_as = cob_capital
+				add_deposit = d_guardian_dragon_hoard
+				add_modifier = {modifier=the_memorex}
+				add_modifier = {modifier=colonial_spirit_mod}
+				set_planet_flag = starting_deposit
+			}
+		}
+	}
+
+	planet = {
+		class = pc_neutron_star
+		orbit_distance = 0
+		orbit_angle = 120
+		size = 20
+		init_effect = {
+			save_event_target_as = quantum_catapult_t
+			clear_deposits = yes
+
+		}
+		change_orbit = 50
+
+		planet = {
+			class = pc_frozen
+			orbit_distance = 30
+			init_effect = {
+				save_event_target_as = interstellar_assembly_t
+			}
+		}
+
+		planet = {
+			class = pc_gas_giant
+			orbit_distance = 30
+			init_effect = {
+				save_event_target_as = strategic_coordination_center_t
+			}
+		}
+		planet = {
+			class = "pc_gas_giant"
+			orbit_distance = 50
+			size = 35
+			change_orbit = 10
+			moon = {
+				class = "pc_molten"
+				size = 10
+			}
+			init_effect = {
+				save_event_target_as = spy_orb_t
+			}
+		}
+	}
+
+	planet = {
+		class = pc_b_star
+		orbit_distance = 0
+		orbit_angle = 120
+		size = 20
+		has_ring = no
+		init_effect = {
+			save_event_target_as = mega_shipyard_t
+		}
+
+		planet = {
+			class = pc_gas_giant
+			orbit_distance = 60
+			init_effect = {
+				save_event_target_as = mega_art_installation_t
+				add_deposit = d_energy_9
+				add_deposit = d_exotic_gases_5
+				set_planet_flag = starting_deposit
+			}
+		}
+
+		planet = {
+			class = pc_gaia
+			size = 30
+			orbit_distance = 40
+			has_ring = no
+			init_effect = {
+				add_deposit = d_guardian_dragon_hoard
+				add_modifier = {modifier=the_memorex}
+				add_modifier = {modifier=colonial_spirit_mod}
+				set_planet_flag = starting_deposit
+			}
+
+		}
+
+		planet = {
+			class = pc_gas_giant
+			orbit_distance = 80
+			size = 20
+			moon = {
+				class = pc_asteroid
+				count = 2
+				size = 5
+			}
+			init_effect = {
+				save_event_target_as = think_tank_t
+			}
+		}
+
+		change_orbit = 40
+		planet = {
+			class = "pc_asteroid"
+			count = 3
+			orbit_distance = 0
+			size = 5
+			init_effect = {
+					add_deposit = d_physics_10
+					add_deposit = d_society_10
+					add_deposit = d_engineering_10
+					set_planet_flag = starting_deposit
+			}
+		}
+
+		change_orbit = 40
+		planet = {
+			class = "pc_molten"
+			count = 6
+			orbit_distance = 0
+			size = 10
+			init_effect = {
+				add_deposit = d_volatile_motes_5
+				add_deposit = d_exotic_gases_5
+				add_deposit = d_rare_crystals_5
+				add_deposit = d_minerals_10
+				set_planet_flag = starting_deposit
+			}
+		}
+
+	}
+	init_effect = {
+			spawn_megastructure = {
+				type = "matter_decompressor_ruined"
+				planet = event_target:matter_decompressor_t
+				orbit_distance = 80
+			}
+			spawn_megastructure = {
+				type = "dyson_sphere_ruined"
+				planet = event_target:dyson_sphere_t
+			}
+			spawn_megastructure = {
+				type = "orbital_arc_furnace_1"
+				planet = event_target:orbital_arc_furnace_t
+			}
+			spawn_megastructure = {
+				type = "gateway_final"
+				planet = event_target:matter_decompressor_t
+				orbit_distance = 700
+			}
+			spawn_megastructure = {
+				type = "quantum_catapult_ruined"
+				planet = event_target:quantum_catapult_t
+			}
+			spawn_megastructure = {
+				type = "interstellar_assembly_ruined"
+				planet = event_target:interstellar_assembly_t
+				orbit_distance = 40
+			}
+			spawn_megastructure = {
+				type = "strategic_coordination_center_ruined"
+				planet = event_target:strategic_coordination_center_t
+			}
+			spawn_megastructure = {
+				type = "spy_orb_ruined"
+				planet = event_target:spy_orb_t
+			}
+			spawn_megastructure = {
+				type = "mega_art_installation_ruined"
+				planet = event_target:mega_art_installation_t
+				orbit_distance = 40
+			}
+			spawn_megastructure = {
+				type = "think_tank_ruined"
+				planet = event_target:think_tank_t
+			}
+			spawn_megastructure = {
+				type = "mega_shipyard_1"
+				orbit_distance = 20
+				planet = event_target:mega_shipyard_t
+			}
+			spawn_megastructure = {
+				type = "ring_world_ruined"
+				orbit_angle = 0
+				orbit_distance = 50
+				planet = event_target:matter_decompressor_t
+			}
+			spawn_megastructure = {
+				type = "ring_world_ruined"
+				orbit_angle = 180
+				orbit_distance = 50
+				planet = event_target:matter_decompressor_t
+			}
+			spawn_megastructure = {
+				type = "ring_world_ruined"
+				orbit_angle = 270
+				orbit_distance = 50
+				planet = event_target:matter_decompressor_t
+			}
+	}
+
+}

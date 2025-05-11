@@ -1,0 +1,54 @@
+namespace = cob_init
+
+planet_event = {
+	id = cob_init.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_planet_flag = cob_origin_planet
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = cob_country
+		}
+	}
+}
+
+country_event = {
+    id = cob_init.2
+    hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = cob_country
+	}
+
+    immediate = {
+		capital_scope = {
+			cob_home_planet_set = yes
+		}
+    }
+}
+
+country_event = {
+    id = cob_init.3
+    hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = cob_country
+	}
+
+    immediate = {
+		every_country = {
+			if = {
+					limit = {
+						has_origin = origin_center_ob
+					}
+					add_modifier={ modifier=center_ob_modif }
+			}
+		}
+    }
+}

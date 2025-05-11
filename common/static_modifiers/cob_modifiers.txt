@@ -1,0 +1,10 @@
+center_ob_modif = {
+    empire_size_colonies_mult = -0.75
+    empire_size_branch_office_mult = -0.75
+    empire_size_systems_mult = 9.0
+    empire_size_pops_mult = -0.75
+    empire_size_districts_mult = -0.75
+    diplo_weight_mult = 1.0
+    planet_crime_add = -1000
+    country_naval_cap_mult = 1.0
+}

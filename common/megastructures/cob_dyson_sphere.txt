@@ -1,0 +1,61 @@
+# Ruined Dyson Sphere
+dyson_sphere_ruined = {
+	entity = "dyson_sphere_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+
+	potential = {
+		always = no
+	}
+}
+
+# Restored Dyson Sphere
+dyson_sphere_restored = {
+	entity = "dyson_sphere_phase_05_entity"
+	construction_entity = "dyson_sphere_part_4_entity"
+	portrait = "GFX_megastructure_dyson_sphere_background"
+	build_time = 7200
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 20000
+			unity = 7500
+		}
+
+		produces = {
+			energy = 4000
+		}
+	}
+	upgrade_from = {
+		dyson_sphere_ruined
+	}
+
+	outliner_trigger = {
+		exists = owner
+		owner = {
+			has_country_flag = can_build_disco_sphere
+		}
+	}
+
+	possible = {
+		from = { has_technology = tech_mega_engineering }
+	}
+
+	on_build_start = {
+		set_star_flag = dyson_sphere_construction
+		fromfrom = {
+			set_graphical_culture = root.from
+		}
+	}
+
+	on_build_cancel = {
+		remove_star_flag = dyson_sphere_construction
+	}
+
+	on_build_complete = {
+		remove_star_flag = dyson_sphere_construction
+		from = {
+			set_country_flag = has_built_or_repaired_megastructure
+			country_event = { id = utopia.2011 }
+		}
+	}
+}

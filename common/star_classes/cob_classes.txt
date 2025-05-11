@@ -1,0 +1,21 @@
+sc_cob = {
+	class = black_hole
+	icon = black_hole
+	planet = {
+		key = pc_black_hole
+		class = black_hole
+	}
+    planet = {
+		key = pc_a_star
+		class = a_star
+	}
+	planet = {
+		key = pc_neutron_star
+		class = neutron_star
+	}
+	planet = {
+		key = pc_b_star
+		class = b_star
+	}
+	spawn_odds = 0
+}

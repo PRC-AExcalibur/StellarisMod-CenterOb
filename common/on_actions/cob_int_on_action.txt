@@ -1,0 +1,12 @@
+empire_init_capital_planet = {
+	events = {
+		cob_init.1
+	}
+}
+
+on_game_start_country = {
+	events = {
+		cob_init.2
+		cob_init.3
+	}
+}

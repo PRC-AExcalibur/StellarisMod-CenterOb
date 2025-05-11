@@ -1,0 +1,136 @@
+cob_home_planet_set = {
+	IF = {
+		limit = {
+			has_planet_flag = cob_origin_planet
+		}
+		owner = {
+			save_event_target_as = cob_owner
+			give_technology = {
+				tech = "tech_gateway_activation"
+				message = no
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = cob_flag_0
+			}
+			create_starbase = {
+				size = "starbase_starport"
+				module = "shipyard"
+				module = "shipyard"
+				building = "crew_quarters"
+			}
+			every_system_planet = {
+				if = {
+					limit = {
+						is_colonizable = yes
+						is_colony = no
+						is_planet_class = pc_relic
+					}
+					create_colony = {
+						owner = event_target:cob_owner
+						species = owner_main_species
+					}
+					generate_start_buildings_and_districts = yes
+					save_event_target_as = cob_capital
+					set_owner = root
+					set_controller = root
+					set_capital = yes
+				}
+				else_if = {
+					limit = {
+						is_colonizable = yes
+						is_colony = no
+					}
+					create_colony = {
+						owner = event_target:cob_owner
+						species = owner_main_species
+					}
+					set_owner = root
+					set_controller = root
+				}
+				else_if = {
+					limit = {
+						has_deposit_for = shipclass_research_station
+						has_research_station = no
+					}
+					create_research_station = {
+						owner = root
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = random
+						random_existing_design = science
+					}
+					set_fleet_stance = evasive
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = random
+						random_existing_design = constructor
+					}
+					set_fleet_stance = evasive
+				}
+			}
+			create_fleet = {
+				set_take_point = yes
+				effect = {
+					set_owner = root
+					while = {
+						count = 3
+						create_ship = {
+							name = random
+							random_existing_design = corvette
+						}
+					}
+					set_fleet_stance = aggressive
+				}
+			}
+			solar_system = {
+				set_surveyed = {
+					surveyed = yes
+					surveyor = event_target:cob_owner
+				}
+			}
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						has_planet_flag = starry_init_moon
+					}
+					prevent_anomaly = yes
+					add_modifier = {
+						modifier = terraforming_candidate
+						days = -1
+					}
+				}
+			}
+		}
+		every_owned_pop = {
+			resettle_pop = {
+				pop = THIS
+				planet = event_target:cob_capital
+			}
+			unemploy_pop = yes
+		}
+		remove_all_buildings = yes
+		remove_all_districts = yes
+		clear_deposits = yes
+		destroy_colony = yes
+		
+		solar_system = {
+			every_fleet_in_system = {
+				delete_fleet = {
+					target = this
+					kill_leader = no
+				}
+			}
+		}
+	}
+}
