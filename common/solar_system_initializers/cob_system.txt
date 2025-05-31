@@ -149,7 +149,7 @@ cob_home_system_init_01 = {
 		}
 
 		planet = {
-			class = pc_relic
+			class = pc_relic_cob
 			orbit_distance = 40
 			size = 60
 			home_planet = yes
@@ -229,7 +229,7 @@ cob_home_system_init_01 = {
 		}
 
 		planet = {
-			class = pc_gaia
+			class = pc_relic_cob
 			size = 30
 			orbit_distance = 40
 			has_ring = no
@@ -303,7 +303,7 @@ cob_home_system_init_01 = {
 			spawn_megastructure = {
 				type = "gateway_final"
 				planet = event_target:matter_decompressor_t
-				orbit_distance = 700
+				orbit_distance = 100
 			}
 			spawn_megastructure = {
 				type = "quantum_catapult_ruined"

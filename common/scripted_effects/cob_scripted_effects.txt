@@ -25,7 +25,7 @@ cob_home_planet_set = {
 					limit = {
 						is_colonizable = yes
 						is_colony = no
-						is_planet_class = pc_relic
+						is_planet_class = pc_relic_cob
 					}
 					create_colony = {
 						owner = event_target:cob_owner
@@ -112,25 +112,25 @@ cob_home_planet_set = {
 				}
 			}
 		}
-		every_owned_pop = {
-			resettle_pop = {
-				pop = THIS
-				planet = event_target:cob_capital
-			}
-			unemploy_pop = yes
-		}
-		remove_all_buildings = yes
-		remove_all_districts = yes
-		clear_deposits = yes
-		destroy_colony = yes
+		# every_owned_pop = {
+		# 	resettle_pop = {
+		# 		pop = THIS
+		# 		planet = event_target:cob_capital
+		# 	}
+		# 	unemploy_pop = yes
+		# }
+		# remove_all_buildings = yes
+		# remove_all_districts = yes
+		# clear_deposits = yes
+		# destroy_colony = yes
 		
-		solar_system = {
-			every_fleet_in_system = {
-				delete_fleet = {
-					target = this
-					kill_leader = no
-				}
-			}
-		}
+		# solar_system = {
+		# 	every_fleet_in_system = {
+		# 		delete_fleet = {
+		# 			target = this
+		# 			kill_leader = no
+		# 		}
+		# 	}
+		# }
 	}
 }

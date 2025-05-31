@@ -4,5 +4,5 @@ tags={
 	"Gameplay"
 }
 name="【起源】银心守卫"
-supported_version="v3.14"
+supported_version="v4.0"
 remote_file_id="3463906712"
