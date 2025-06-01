@@ -158,8 +158,13 @@ cob_home_system_init_01 = {
 				set_planet_flag = cob_init_system
 				save_event_target_as = cob_capital
 				add_deposit = d_guardian_dragon_hoard
+				add_deposit = d_dust_desert
+				add_deposit = d_fuming_bog
+				add_deposit = d_crystal_forest
+				add_deposit = d_portal_research_zone
 				add_modifier = {modifier=the_memorex}
 				add_modifier = {modifier=colonial_spirit_mod}
+				add_modifier = {modifier=pc_relic_cob_modif}
 				set_planet_flag = starting_deposit
 			}
 		}
@@ -235,8 +240,13 @@ cob_home_system_init_01 = {
 			has_ring = no
 			init_effect = {
 				add_deposit = d_guardian_dragon_hoard
+				add_deposit = d_dust_desert
+				add_deposit = d_fuming_bog
+				add_deposit = d_crystal_forest
+				add_deposit = d_portal_research_zone
 				add_modifier = {modifier=the_memorex}
 				add_modifier = {modifier=colonial_spirit_mod}
+				add_modifier = {modifier=pc_relic_cob_modif}
 				set_planet_flag = starting_deposit
 			}
 
