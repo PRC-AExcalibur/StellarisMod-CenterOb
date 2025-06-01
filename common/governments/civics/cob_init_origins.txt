@@ -4,7 +4,6 @@ origin_center_ob = {
 	icon = "gfx/interface/icons/origins/origins_shattered_ring.dds"
 	picture = GFX_origin_shattered_ring
 
-	starting_colony = pc_relic_habitable
 	initializers = { cob_home_system_initializer }
 	max_once_global = yes
 

@@ -25,30 +25,32 @@ cob_home_planet_set = {
 					limit = {
 						is_colonizable = yes
 						is_colony = no
-						is_planet_class = pc_relic_cob
+						has_planet_flag = cob_capital_plant
 					}
 					create_colony = {
 						owner = event_target:cob_owner
 						species = owner_main_species
 					}
+					generate_start_deposits_and_blockers = yes
 					generate_start_buildings_and_districts = yes
+					generate_start_pops = yes
 					save_event_target_as = cob_capital
 					set_owner = root
 					set_controller = root
 					set_capital = yes
 				}
-				else_if = {
-					limit = {
-						is_colonizable = yes
-						is_colony = no
-					}
-					create_colony = {
-						owner = event_target:cob_owner
-						species = owner_main_species
-					}
-					set_owner = root
-					set_controller = root
-				}
+				# else_if = {
+				# 	limit = {
+				# 		is_colonizable = yes
+				# 		is_colony = no
+				# 	}
+				# 	create_colony = {
+				# 		owner = event_target:cob_owner
+				# 		species = owner_main_species
+				# 	}
+				# 	set_owner = root
+				# 	set_controller = root
+				# }
 				else_if = {
 					limit = {
 						has_deposit_for = shipclass_research_station
@@ -119,18 +121,18 @@ cob_home_planet_set = {
 		# 	}
 		# 	unemploy_pop = yes
 		# }
-		# remove_all_buildings = yes
-		# remove_all_districts = yes
-		# clear_deposits = yes
-		# destroy_colony = yes
+		remove_all_buildings = yes
+		remove_all_districts = yes
+		clear_deposits = yes
+		destroy_colony = yes
 		
-		# solar_system = {
-		# 	every_fleet_in_system = {
-		# 		delete_fleet = {
-		# 			target = this
-		# 			kill_leader = no
-		# 		}
-		# 	}
-		# }
+		solar_system = {
+			every_fleet_in_system = {
+				delete_fleet = {
+					target = this
+					kill_leader = no
+				}
+			}
+		}
 	}
 }
