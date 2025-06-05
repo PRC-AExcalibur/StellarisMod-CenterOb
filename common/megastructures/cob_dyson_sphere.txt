@@ -1,5 +1,5 @@
 # Ruined Dyson Sphere
-dyson_sphere_ruined = {
+dyson_sphere_ruined_cob = {
 	entity = "dyson_sphere_destroyed_entity"
 	portrait = "GFX_megastructure_construction_background"
 
@@ -9,7 +9,7 @@ dyson_sphere_ruined = {
 }
 
 # Restored Dyson Sphere
-dyson_sphere_restored = {
+dyson_sphere_restored_cob = {
 	entity = "dyson_sphere_phase_05_entity"
 	construction_entity = "dyson_sphere_part_4_entity"
 	portrait = "GFX_megastructure_dyson_sphere_background"
@@ -26,7 +26,7 @@ dyson_sphere_restored = {
 		}
 	}
 	upgrade_from = {
-		dyson_sphere_ruined
+		dyson_sphere_ruined_cob
 	}
 
 	outliner_trigger = {
@@ -41,18 +41,18 @@ dyson_sphere_restored = {
 	}
 
 	on_build_start = {
-		set_star_flag = dyson_sphere_construction
+
 		fromfrom = {
 			set_graphical_culture = root.from
 		}
 	}
 
 	on_build_cancel = {
-		remove_star_flag = dyson_sphere_construction
+
 	}
 
 	on_build_complete = {
-		remove_star_flag = dyson_sphere_construction
+
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
 			country_event = { id = utopia.2011 }

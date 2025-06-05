@@ -70,7 +70,7 @@ cob_home_system_initializer = {
 
 
 cob_home_system_init_01 = {
-	name = "Center System"
+	name = "CenterSystem"
 	class = "sc_cob"
 
 	flags = {
@@ -149,7 +149,7 @@ cob_home_system_init_01 = {
 		}
 
 		planet = {
-			class = pc_relic_cob
+			class = pc_gaia
 			orbit_distance = 40
 			size = 60
 			home_planet = yes
@@ -164,7 +164,6 @@ cob_home_system_init_01 = {
 				add_deposit = d_portal_research_zone
 				add_modifier = {modifier=the_memorex}
 				add_modifier = {modifier=colonial_spirit_mod}
-				add_modifier = {modifier=pc_relic_cob_modif}
 				set_planet_flag = starting_deposit
 			}
 		}
@@ -234,7 +233,7 @@ cob_home_system_init_01 = {
 		}
 
 		planet = {
-			class = pc_relic_cob
+			class = pc_gaia
 			size = 30
 			orbit_distance = 40
 			has_ring = no
@@ -246,7 +245,6 @@ cob_home_system_init_01 = {
 				add_deposit = d_portal_research_zone
 				add_modifier = {modifier=the_memorex}
 				add_modifier = {modifier=colonial_spirit_mod}
-				add_modifier = {modifier=pc_relic_cob_modif}
 				set_planet_flag = starting_deposit
 			}
 
@@ -303,7 +301,7 @@ cob_home_system_init_01 = {
 				orbit_distance = 80
 			}
 			spawn_megastructure = {
-				type = "dyson_sphere_ruined"
+				type = "dyson_sphere_ruined_cob"
 				planet = event_target:dyson_sphere_t
 			}
 			spawn_megastructure = {
@@ -342,7 +340,7 @@ cob_home_system_init_01 = {
 				planet = event_target:think_tank_t
 			}
 			spawn_megastructure = {
-				type = "mega_shipyard_1"
+				type = "mega_shipyard_ruined"
 				orbit_distance = 20
 				planet = event_target:mega_shipyard_t
 			}

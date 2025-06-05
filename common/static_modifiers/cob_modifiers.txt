@@ -8,9 +8,3 @@ center_ob_modif = {
     planet_crime_add = -1000
     country_naval_cap_mult = 1.0
 }
-
-pc_relic_cob_modif = {
-    district_farming_max = 20
-    district_mining_max = 20
-    district_generator_max = 20
-}

@@ -8,7 +8,9 @@
  center_ob_modif:0 "银心守卫准则"
  center_ob_modif_desc:0 "银心守卫在银心不受惩罚，而远在天边的星系难以管理。"
 
- pc_relic_cob:0 "银心遗落星球"
- pc_relic_cob_desc:0 "银心星团中特有的星球。"
- pc_relic_cob_modif:0 "银心遗落星球区块修正"
- pc_relic_cob_modif_desc:0 "银心遗落星球全区块至少20块。"
+ dyson_sphere_ruined_cob: "废弃的戴森球"
+ dyson_sphere_ruined_cob_DESC: "一个废弃的戴森球。尽管它已经年久失修，但这个庞然大物的基本结构大部分完好无损。通过必要的科技和大量的资源投入，我们就有可能修复好这个戴森球。"
+ dyson_sphere_ruined_cob_MEGASTRUCTURE_DETAILS: ""
+ dyson_sphere_restored_cob: "戴森球"
+ dyson_sphere_restored_cob_DESC: "完全运作中的戴森球——能量生产效率§G100%§!。"
+ CenterSystem: "银心"

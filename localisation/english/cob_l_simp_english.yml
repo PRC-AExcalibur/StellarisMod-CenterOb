@@ -7,5 +7,9 @@
  center_ob_modif:0 "Guardian's Code of the Galactic Core"
  center_ob_modif_desc:0 "The Guardian of the Galactic Core faces no penalties in the core, while distant systems are hard to manage."
 
- pc_relic_cob:0 "Relic Planet of the Galactic Core"
- pc_relic_cob_desc:0 "A relic planet in the Galactic Core Cluster."
+
+ dyson_sphere_ruined_cob:0 "Ruined Dyson Sphere"
+ dyson_sphere_ruined_cob_DESC:0 "A ruined Dyson Sphere. Despite its age, the megastructure's basic frame is largely intact. With the necessary technology and vast amounts of resources, the sphere could potentially be repaired."
+ dyson_sphere_ruined_cob_MEGASTRUCTURE_DETAILS:0 ""
+ dyson_sphere_restored_cob:0 "Dyson Sphere"
+ dyson_sphere_restored_cob_DESC:0 "A fully operational Dyson Sphere - §G100%§! energy generation efficiency."
