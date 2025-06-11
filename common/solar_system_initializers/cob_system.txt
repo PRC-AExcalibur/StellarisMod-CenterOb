@@ -149,7 +149,7 @@ cob_home_system_init_01 = {
 		}
 
 		planet = {
-			class = pc_gaia
+			class = pc_relic
 			orbit_distance = 40
 			size = 60
 			home_planet = yes
